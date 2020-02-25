@@ -1,3 +1,23 @@
+## RUN THE PROJECT ##
+
+In react-native-ex
+$ npx expo start
+
+## FOR SWITH BETWEEN DAY OR EX ##
+
+DAY
+In ./App.js CHANGE THE "NUMBER" IN THIS LINE:
+> import Day from './Day[NUMBER]/App'
+
+EX
+In ./Day[NUMBER]/App.js CHANGE THE "NUMBER" (for a file) or "NAME" (for a folder) IN THIS LINE:
+> import MyApp from './ex[NUMBER]'
+or
+> import MyApp from './ex[NAME]/App'
+
+## ###### ENJOY ###### ##
+
+
 ## <a name='TOC'>Summary</a>
 
 - [Day 01 Objectives](#objectivesd01)

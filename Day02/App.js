@@ -1,8 +1,8 @@
 import React from 'react';
-import Day from './Day02/App';
+import MyApp from './ex01-02/App'
 
 export default function App() {
     return (
-      <Day></Day>
+      <MyApp></MyApp>
     );
 }

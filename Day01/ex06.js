@@ -4,13 +4,12 @@ import {
     ScrollView,
     View,
     TextInput,
-    Text,
-    Alert
+    Text
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import styles from './assets/styles';
+import styles from '../assets/styles';
 
-export default class HelloWorldApp extends Component {
+export default class MyApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,7 +44,7 @@ export default class HelloWorldApp extends Component {
             <SafeAreaView style={styles.safeArea}>
                 <View style={styles.viewInput}>
                     <TextInput
-                        style={{height: 30, width: 300, borderBottomWidth : 1.0}}
+                        style={{height: 30, width: 300, borderBottomWidth : 1.0, marginRight: 5}}
                         placeholder="Enter a destination..."
                         onChangeText={(text) => this.setState({text})}
                         value={this.state.text}

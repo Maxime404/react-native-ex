@@ -3,9 +3,9 @@ import {
   View,
   Text
 } from 'react-native';
-import styles from './assets/styles';
+import styles from '../assets/styles';
 
-export default class HelloWorldApp extends Component {
+export default class MyApp extends Component {
   render() {
     return (
       <View style={styles.view}>

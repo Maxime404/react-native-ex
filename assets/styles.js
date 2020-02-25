@@ -3,11 +3,12 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#FFF"
+    backgroundColor: "#FFF",
+    paddingTop: Platform.OS === 'android' ? 40 : 0
   },
   view: {
     flex: 1,
-    backgroundColor: "#676767",
+    //backgroundColor: "#676767",
     justifyContent: "center",
     alignItems: "center"
   },
@@ -67,6 +68,10 @@ export default StyleSheet.create({
   },
   text: {
     color: "#FFF"
+  },
+  button: {
+    height: 10,
+    color: "red"
   },
   img: {
     width: 200,
