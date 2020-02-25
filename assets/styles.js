@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
   viewTop: {
     flex: 1,
-    backgroundColor: "#DCDCDC",
+    //backgroundColor: "#DCDCDC",
     alignItems: "center"
   },
   viewBlockPink: {

@@ -4,7 +4,8 @@ import {
     ScrollView,
     View,
     TextInput,
-    Text
+    Text,
+    Alert
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import styles from '../assets/styles';
@@ -25,8 +26,14 @@ export default class MyApp extends Component {
     }
 
     addDestination = () => {
-        this.setState({ destinations: [...this.state.destinations, {text: this.state.text, checked: false}] });
-        this.setState({ text: '' }); 
+        const found = this.state.destinations.some(destination => destination.text.toLowerCase() === this.state.text.toLowerCase());
+
+        if (!found) {
+            this.setState({ destinations: [...this.state.destinations, {text: this.state.text, checked: false}] });
+            this.setState({ text: '' });
+        } else {
+            Alert.alert('Error', this.state.text + ' already exist in this list...'); 
+        }
     }
 
     updateDestinationChecking(item) {

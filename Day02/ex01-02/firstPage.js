@@ -31,7 +31,8 @@ export default class FirstPage extends Component {
                         onChangeText={(text) => this.setState({text})}
                         value={this.state.text}
                     />
-                    <Button style={styles.button}
+                    <Button
+                      style={styles.button}
                       title="Go"
                       //onPress={() => this.props.navigation.navigate('SecondPage', {name: 'Second Page', text: this.state.text})}
                       onPress={this.post}
