@@ -1,29 +1,63 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
+    Text,
     View,
-    Text
-} from 'react-native';
-import Geolocation from 'react-native-geolocation-service';
+    Alert,
+    Button,
+    SafeAreaView
+} from "react-native";
 import styles from '../../assets/styles';
 
 export default class MyApp extends Component {
-    render() {
+    state = {
+        location: null,
+        latitude: null,
+        longitude: null
+    };
 
-        Geolocation.getCurrentPosition(
-            (position) => {
-                console.log(position);
+    findCoordinates = () => {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                const location = JSON.stringify(position);
+                const latitude = JSON.stringify(position.coords.latitude);
+                const longitude = JSON.stringify(position.coords.longitude);
+
+                this.setState({ location, latitude, longitude });
             },
-            (error) => {
-                // See error code charts below.
-                console.log(error.code, error.message);
-            },
-            { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+            error => Alert.alert(error.message),
+            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
         );
+    };
 
+    reset = () => {
+        if (this.state.location) {
+            this.setState({ location: null, latitude: null, longitude: null });
+        } else {
+            Alert.alert('Nothing to delete...');
+        }
+    }
+
+    render() {
         return (
-            <View style={styles.view}>
-                <Text style={styles.title}>Hello</Text>
-            </View>
+            <SafeAreaView style={styles.safeArea}>
+                <View style={styles.view}>
+                    <Button
+                        style={styles.button}
+                        title={!this.state.location ? "Get my current position" : "Refresh my current position"}
+                        onPress={this.findCoordinates}
+                    />
+                    <Button
+                        style={styles.button}
+                        title="Reset"
+                        onPress={this.reset}
+                    />
+                    <View style={{paddingTop: 20}}>
+                        <Text>Latitude: {this.state.latitude}</Text>
+                        <Text>Longitude: {this.state.longitude}</Text>
+                    </View>
+                </View>
+            </SafeAreaView>
+
         );
     }
 }
