@@ -1,38 +1,41 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions, Image } from 'react-native';
-import { DrawerItems, createAppContainer } from 'react-navigation';
-import createDrawerNavigator from 'react-navigation-drawer'
-import HomePage from './homePage';
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import FirstPage from './firstPage';
+import SecondPage from './secondPage';
 
 const { width } = Dimensions.get("window");
 
 const CustomDrawerNavigation = (props) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ height: 250, backgroundColor: '#d2d2d2', opacity: 0.9 }}>
-        <View style={{ height: 200, backgroundColor: 'Green', alignItems: 'center', justifyContent: 'center' }}>
-        </View>
-        <View style={{ height: 50, backgroundColor: 'Green', alignItems: 'center', justifyContent: 'center' }}>
-          <Text>John Doe</Text>
-        </View>
-      </View>
       <ScrollView>
+        <Icon
+          name="menu"
+          size={20}
+          style={{textAlign: 'right', paddingHorizontal: 10}}
+          onPress={() => props.navigation.closeDrawer()}
+        />
         <DrawerItems {...props} />
       </ScrollView>
-      <View style={{ alignItems: "center", bottom: 20 }}>
-        <View style={{ flexDirection: 'row' }}>
-          
-        </View>
-      </View>
     </SafeAreaView>
   );
 }
 
 const Drawer = createDrawerNavigator({
-  Home: {
-    screen: HomePage,
+  FirstPage: {
+    screen: FirstPage,
     navigationOptions: {
-      title: 'Homepage'
+      title: 'First page'
+    }
+  },
+  SecondPage: {
+    screen: SecondPage,
+    navigationOptions: {
+      title: 'Second page'
     }
   }
 },
@@ -45,4 +48,6 @@ const Drawer = createDrawerNavigator({
     drawerWidth: (width / 3) * 2
   });
 
-export default createAppContainer(Drawer);
+const App = createAppContainer(Drawer);
+
+export default App;

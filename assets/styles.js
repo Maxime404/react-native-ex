@@ -47,6 +47,14 @@ export default StyleSheet.create({
     alignItems: "center",
     height: 40
   },
+  headerGrey: {
+    backgroundColor: "#696969",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+    height: 40
+  },
   footer: {
     backgroundColor: "#FFF",
     justifyContent: "center",
@@ -82,5 +90,9 @@ export default StyleSheet.create({
   },
   lineThrough: {
     textDecorationLine: 'line-through'
+  },
+  icon: {
+    fontSize: 20,
+    color: "#FFF"
   }
 });

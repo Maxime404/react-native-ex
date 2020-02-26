@@ -18,7 +18,7 @@ export default class MyApp extends Component {
                 <Text>Hello</Text>
                 <Image
                     style={styles.img}
-                    source={require('./assets/image.png')}
+                    source={require('../assets/image.png')}
                 />
             </View>
             <View style={styles.footer}>

@@ -17,7 +17,7 @@ export default class MyApp extends Component {
     render() {
         return (
         <View style={styles.view}>
-            <Text style={styles.text}>{this.state.clicks}</Text>
+            <Text>{this.state.clicks}</Text>
             <Button
             title="BUTTON"
             onPress={this.IncrementItem}

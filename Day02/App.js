@@ -1,5 +1,5 @@
 import React from 'react';
-import MyApp from './ex03/App'
+import MyApp from './ex04/App';
 
 export default function App() {
     return (
