@@ -41,6 +41,11 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
+  viewListBordered: {
+    borderBottomWidth: 1.0,
+    paddingHorizontal: 10,
+    width: '90%'
+  },
   header: {
     backgroundColor: "#000",
     justifyContent: "center",
@@ -78,8 +83,7 @@ export default StyleSheet.create({
     color: "#FFF"
   },
   button: {
-    height: 10,
-    color: "red"
+    height: 10
   },
   img: {
     width: 200,
@@ -94,5 +98,11 @@ export default StyleSheet.create({
   icon: {
     fontSize: 20,
     color: "#FFF"
+  },
+  input: {
+    height: 40,
+    width: 300,
+    borderBottomWidth: 1.0,
+    marginRight: 5
   }
 });
