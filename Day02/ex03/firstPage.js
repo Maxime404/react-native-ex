@@ -10,9 +10,6 @@ import styles from '../../assets/styles';
 
 export default class FirstPage extends Component {
   render() {
-
-    const myIcon = <Icon name="rocket" size={30} color="#900" />;
-
     return (
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.headerGrey}>
